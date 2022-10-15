@@ -174,3 +174,33 @@ percentageValue7=`echo $value7 | awk '{printf "%.2 f",$1/10*100}'`
 tripletDictionary["TTH"]=$percentageValue7
 percentageValue8=`echo $value8 | awk '{printf "%.2 f",$1/10*100}'`
 tripletDictionary["TTT"]=$percentageValue8
+### Sort Singlet,Doublet and Triplet Combination
+declare -a singletArray
+singletArray[0]="H"
+singletArray[1]="T"
+declare -a doubletArray
+doubletArray[0]="HH"
+doubletArray[1]="HT"
+doubletArray[2]="TH"
+doubletArray[3]="TT"
+declare -a tripletArray
+tripletArray[0]="HHH"
+tripletArray[1]="HHT"
+tripletArray[2]="HTH"
+tripletArray[3]="HTT"
+tripletArray[4]="THH"
+tripletArray[5]="THT"
+tripletArray[6]="TTH"
+tripletArray[7]="TTT"
+echo "${singletArray[0]}=${dictionary[${singletArray[0]}]}"
+echo "${doubletArray[0]}=${multiCoinDictionary[${doubletArray[0]}]}"
+echo "${doubletArray[1]}=${multiCoinDictionary[${doubletArray[1]}]}"
+echo "${doubletArray[2]}=${multiCoinDictionary[${doubletArray[2]}]}"
+echo "${tripletArray[0]}=${tripletDictionary[${tripletArray[0]}]}"
+echo "${tripletArray[1]}=${tripletDictionary[${tripletArray[1]}]}"
+echo "${tripletArray[2]}=${tripletDictionary[${tripletArray[2]}]}"
+echo "${tripletArray[3]}=${tripletDictionary[${tripletArray[3]}]}"
+echo "${tripletArray[4]}=${tripletDictionary[${tripletArray[4]}]}"
+echo "${tripletArray[5]}=${tripletDictionary[${tripletArray[5]}]}"
+echo "${tripletArray[6]}=${tripletDictionary[${tripletArray[6]}]}"
+echo "${tripletArray[7]}=${tripletDictionary[${tripletArray[7]}]}"
